@@ -15,6 +15,7 @@ const morgan = require('morgan');
 
 app.use(morgan('dev'));
 
+console.log('uri',appConfig.db.uri)
 
 
 app.use(bodyParser.json());
