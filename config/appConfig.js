@@ -4,7 +4,7 @@ appConfig.port = process.env.PORT || 5000;
 appConfig.allowedCorsOrigin = "*";
 appConfig.env = "dev";
 appConfig.db = {
-    uri: 'mongodb+srv://node-shop:node-user123@node-rest-shp-ift2f.mongodb.net/pharmaApp?retryWrites=true&w=majority'
+    uri: process.env.MONGODB_PROD_URL
 };
 appConfig.apiVersion = '/api/v1';
   
