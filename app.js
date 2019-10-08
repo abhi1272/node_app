@@ -15,7 +15,7 @@ const morgan = require('morgan');
 
 app.use(morgan('dev'));
 
-console.log('uri',appConfig.db.uri)
+console.log(appConfig.db.uri)
 
 
 app.use(bodyParser.json());
@@ -115,7 +115,7 @@ function onListening() {
     : 'port ' + addr.port;
   ('Listening on ' + bind);
   logger.info('server listening on port' + addr.port, 'serverOnListeningHandler', 10);
-  let db = mongoose.connect('mongodb+srv://node-shop:node-user123@node-rest-shp-ift2f.mongodb.net/pharmaApp?retryWrites=true&w=majority',{ useNewUrlParser:true ,useCreateIndex:true});
+  let db = mongoose.connect(appConfig.db.uri,{ useNewUrlParser:true ,useCreateIndex:true});
 }
 
 process.on('unhandledRejection', (reason, p) => {

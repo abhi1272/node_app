@@ -9,7 +9,7 @@ appConfig.db = {
 appConfig.apiVersion = '/api/v1';
   
 
-module.exports = mongodb+srv://node-shop:node-user123@node-rest-mongodb+srv://node-shop:node-user123@node-rest-shp-ift2f.mongodb.net/pharmaApp?retryWrites=true&w=majorityshp-ift2f.mongodb.net/pharmaApp?retryWrites=true&w=majority{
+module.exports = {
     port: appConfig.port,
     allowedCorsOrigin: appConfig.allowedCorsOrigin,
     environment: appConfig.env,
