@@ -1,20 +1,20 @@
-const customer = require("./../../app/controllers/customer");
-const appConfig = require("../../config/appConfig");
-const auth = require("../middlewares/auth");
-
+const appConfig = require("./../../config/appConfig");
+const common = require('../controllers/common')
 
 module.exports.setRouter = (app) => { 
 
-    let baseUrl = `${appConfig.apiVersion}/customers`;
+    let baseUrl = `${appConfig.apiVersion}/customer`;
 
-    app.post(`${baseUrl}/create`,customer.create);
+    app.post(baseUrl+'/add',common.addProduct);
 
-    app.get(`${baseUrl}`,customer.getAllCustomers);
+    app.get(baseUrl,common.getAllProduct);
 
-    app.get(`${baseUrl}/:id`,customer.getCustomer);
+    app.get(baseUrl+'/:id',common.getSingleProduct);
 
-    app.patch(`${baseUrl}/:id`,customer.updateCustomer);
+    app.patch(baseUrl+'/:id',common.editProduct);
 
-    app.delete(`${baseUrl}/:id`,customer.deleteCustomer);
+    app.delete(baseUrl+'/:id',common.deleteProduct);
     
 };
+
+

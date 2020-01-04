@@ -4,9 +4,10 @@ appConfig.port = process.env.PORT || 5000;
 appConfig.allowedCorsOrigin = "*";
 appConfig.env = "dev";
 appConfig.db = {
-    uri: process.env.MONGODB_PROD_URL
+    uri: process.env.MONGODB_LOCAL_URL
 };
 appConfig.apiVersion = '/api/v1';
+model = ''
   
 
 module.exports = {
@@ -14,5 +15,6 @@ module.exports = {
     allowedCorsOrigin: appConfig.allowedCorsOrigin,
     environment: appConfig.env,
     db :appConfig.db,
-    apiVersion : appConfig.apiVersion
+    apiVersion : appConfig.apiVersion,
+    model:model
 };

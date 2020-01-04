@@ -23,6 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(routeLoggerMiddleware.logIp);
 app.use(globalErrorMiddleware.globalErrorHandler);
+app.use(routeLoggerMiddleware.createModel)
 
 
 app.use(express.static(path.join(__dirname, 'client')));

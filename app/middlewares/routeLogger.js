@@ -7,7 +7,6 @@ let requestIpLogger = (req, res, next) => {
     console.log(req.method+" Request Made from " + remoteIp + ' for route' + req.originalUrl);
 
     if (req.method === 'OPTIONS') {
-        console.log('!OPTIONS');
         var headers = {};
         // IE8 does not allow domains to be specified, just the *
         // headers["Access-Control-Allow-Origin"] = req.headers.origin;
@@ -31,9 +30,16 @@ let requestIpLogger = (req, res, next) => {
      next();
   }
     
-  
+
 };// end request ip logger function  
 
+createModel = (req, res, next) => {
+    let model = req.originalUrl.slice(8).split("/")
+    appConfig.model = model[0].charAt(0).toUpperCase() + model[0].slice(1)
+    next() 
+}
+
 module.exports = {
-    logIp: requestIpLogger
+    logIp: requestIpLogger,
+    createModel:createModel
 };
