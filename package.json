@@ -36,7 +36,7 @@
     "pino": "^4.7.2",
     "request": "^2.83.0",
     "shortid": "^2.2.15",
-    "validator": "^11.1.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.3.0",
